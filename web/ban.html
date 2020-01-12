@@ -163,6 +163,14 @@
                             function() {
                                 submitFormToAddress("/gemp-swccg-server/admin/banUser", $("#banUserForm").eq(0), actionSuccess, actionFailure);
                             });
+                    $("#addAdmin").click(
+                            function() {
+                                submitFormToAddress("/gemp-swccg-server/admin/setPlayerAsAdmin", $("#addAdminForm").eq(0), actionSuccess, actionFailure);
+                            });
+                    $("#removeAdmin").click(
+                            function() {
+                                submitFormToAddress("/gemp-swccg-server/admin/removePlayerAsAdmin", $("#removeAdminForm").eq(0), actionSuccess, actionFailure);
+                            });
                     $("#banUserTemp").click(
                             function() {
                                 submitFormToAddress("/gemp-swccg-server/admin/banUserTemp", $("#banUserTempForm").eq(0), actionSuccess, actionFailure);
@@ -179,6 +187,17 @@
     </script>
 </head>
 <body>
+<h1>Add/Remove Admins</h1>
+<h2>Add</h2>
+<form id="addAdminForm" method="POST" action="/gemp-swccg-server/admin/setPlayerAsAdmin">
+    Name (case-sensitive): <input type="text" name="login"><br/>
+    <input id="addAdmin" type="button" value="Make user Admin">
+</form>
+<h2>Remove</h2>
+<form id="removeAdminForm" method="POST" action="/gemp-swccg-server/admin/removePlayerAsAdmin">
+    Name (case-sensitive): <input type="text" name="login"><br/>
+    <input id="removeAdmin" type="button" value="Remove user as Admin">
+</form>
 <h1>Ban user</h1>
 <h2>Permanently</h2>
 <form id="banUserForm" method="POST" action="/gemp-swccg-server/admin/banUser">
