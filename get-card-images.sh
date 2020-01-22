@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script should only be run in the virtual machine:
-WEBUI_HOME=~/gemp-swccg-webui
+WEBUI_HOME=$(pwd)
  
 if [ ! -d ../holotable ]; then
     REPO_HOME=~/repositories
